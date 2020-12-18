@@ -9,38 +9,47 @@
 			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
 			crossorigin="anonymous"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+			integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+			crossorigin="anonymous"
+		/>
 		<link rel="stylesheet" href="style.css" />
 		<title>Document</title>
 	</head>
 	<body>
-		<div class="container mt-2">
+		<nav class="navbar navbar-dark bg-primary justify-content-end">
+			<span class="navbar-brand h1 mb-0">Climabra</span>
+		</nav>
+		<div class="container mt-2" id="main-container">
 			<div class="row">
 				<div class="col-12">
-					<h2>Villa Sarmiento, Buenos Aires Province</h2>
-					<p class="lead">Mostly sunny</p>
+					<h2 class="title" data-location>Ciudad</h2>
+					<p class="title" data-country>PA</p>
+					<p class="lead" data-weather="general">Resumen clima</p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-3">
+			<div class="row text-center">
+				<div class="col-4">
+					<h3 data-weather="temp">26º</h3>
 					<img
 						class="img-fluid"
-						src="https://dummyimage.com/50x50.gif?text=Icono"
-						alt=""
+						src="imgs/01d.png"
+						alt="weather image"
+						data-weather="icon"
 					/>
 				</div>
-				<div class="col-3">
-					<h3>26º</h3>
-				</div>
-				<div class="col-6">
-					<p class="lead">Precipitacion: <span>0%</span></p>
-					<p class="lead">Humedad: <span>35%</span></p>
-					<p class="lead">Viento: <span>18 km/h</span></p>
+				<div class="col-8">
+					<p class="lead" data-weather="ST">S. térmica:</p>
+					<p class="lead" data-weather="humidity">Humedad: 0%</p>
+					<p class="lead" data-weather="wind">Viento: 18 km/h</p>
 				</div>
 			</div>
 
-			<form>
+			<form data-form="form">
 				<div class="row align-items-end">
-					<div class="col-9">
+					<div class="col-7">
 						<div class="form-group">
 							<label for="location-input" class="mb-1"
 								>Ingrese ubicación:</label
@@ -52,11 +61,23 @@
 								placeholder="Buenos aires"
 								required
 								minlength="1"
+								data-form="input"
 							/>
+							<p class="hidden" data-form="location-error">
+								Ubicación no encontrada
+							</p>
+							<p class="hidden" data-form="geolocation-error">
+								Geolocación no soportada por el navegador
+							</p>
 						</div>
 					</div>
 					<div class="col-3">
 						<button type="submit" class="btn btn-primary">Buscar</button>
+					</div>
+					<div class="col-2" data-form="geoloc">
+						<button class="btn btn-primary">
+							<i class="fas fa-map-marker-alt"></i>
+						</button>
 					</div>
 				</div>
 			</form>

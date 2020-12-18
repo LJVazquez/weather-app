@@ -1,1 +1,12 @@
+/* * {
+	border: 1px solid black;
+} */
 
+.title {
+	display: inline;
+}
+
+.hidden {
+	display: none;
+	transition: all 500ms;
+}
