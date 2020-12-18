@@ -92,7 +92,7 @@ function renderWeather(general, iconCode, temp, wind, ST, hum) {
 	const form = document.querySelector('[data-form="form"]');
 	const geoloc = document.querySelector('[data-form="geoloc"]');
 	form.addEventListener('submit', (e) => formHandler(e));
-	form.addEventListener('submit', getGeolocation);
+	geoloc.addEventListener('click', getGeolocation);
 })();
 
 function formHandler(e) {
