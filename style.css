@@ -1,6 +1,18 @@
-/* * {
-	border: 1px solid black;
-} */
+body {
+	background: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			from(#4084f9),
+			to(#40c0fc)
+		)
+		fixed;
+	color: white;
+}
+
+#main-container {
+	height: 100vh;
+}
 
 .title {
 	display: inline;
@@ -8,5 +20,6 @@
 
 .hidden {
 	display: none;
+	-webkit-transition: all 500ms;
 	transition: all 500ms;
 }
